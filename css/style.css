@@ -1,0 +1,494 @@
+@charset "utf-8";
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px に設定 */
+}
+
+body {
+  font-family: "Kosugi Maru", sans-serif;
+  color: #212529;
+  margin: 0;
+  font-size: 1.8rem;
+  background: #fff;
+}
+
+h1 {
+  font-size: 8.4rem;
+  margin-bottom: 0;
+  color: #dda16e;
+  text-shadow: 0 3px black;
+}
+
+h2 {
+  font-size: 6.4rem;
+  color: #503C28;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+  color: #503C28;
+  text-align: center;
+  margin-top: 0;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(33, 23, 11, 0.8);
+  /*半透明の背景*/
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 2rem;
+}
+
+nav li {
+  margin-left: 2rem;
+  list-style: none;
+  color: #503C28;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #f0e68c;
+}
+
+header {
+  background: url('../images/bg.jpg') no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header-in p {
+  font-size: 3.8rem;
+  color: #e0899bf5;
+  text-shadow: 0 2px black;
+}
+
+#concept {
+  display: flex;
+  align-items: center;
+  padding: 6rem 18rem;
+  background-color: #f4efef;
+}
+
+#concept .about h2 {
+  display: flex; /* Flexboxを適用して子要素（テキストとアイコン）を横並びにする */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: center; /* h2の内容（テキストとアイコン）を水平方向の中央に配置 */
+  gap: 5px; /* テキストとアイコンの間隔を空ける。必要に応じて調整 */
+  /* 元々あった h2 のスタイルがあればそれも残す */
+  font-size: 6.4rem;
+  color: #503C28;
+  text-align: center; /* justify-content: center; で代替できる可能性もあるが、念のため残す */
+  margin-bottom: 1.8rem;
+}
+
+#concept .about h2::after {
+  content: ""; /* 擬似要素を使用 */
+  background-image: url('../images/concept_ukrere.jpg'); /* アイコン画像のURL */
+  background-size: contain; /* 画像を要素内に収める */
+  background-repeat: no-repeat; /* 画像の繰り返しをしない */
+  background-position: center; /* アイコンが中央に表示されるように */
+  width: 80px; /* アイコンの幅。適宜調整してください */
+  height: 80px; /* アイコンの高さ。適宜調整してください */
+  animation: tilt-shake 2s infinite ease-in-out;
+}
+
+@keyframes tilt-shake {
+  0%, 100% {
+    transform: rotateZ(0deg) translateX(0); /* 開始と終了は元の位置・回転 */
+    transform-origin: top center; /* 回転の中心を上部中央に設定 */
+  }
+  25% {
+    transform: rotateZ(8deg) translateX(5px); /* 少し右に傾けつつ右に移動 */
+    transform-origin: top center;
+  }
+  75% {
+    transform: rotateZ(-8deg) translateX(-5px); /* 少し左に傾けつつ左に移動 */
+    transform-origin: top center;
+  }
+}
+
+
+.about {
+  width: 50%;
+  padding-right: 2rem;
+  flex: 1;
+}
+
+.about span {
+  color: #945a03;
+  font-weight: bold;
+}
+
+.about h2 {
+  margin-bottom: 0.5rem;
+}
+
+.about h3 {
+  margin-bottom: 1rem;
+}
+
+
+#concept .about ul {
+  background-color: #f4f0d5;
+  padding: 2rem;
+  border-radius: 10px;
+  list-style: none;
+  font-size: 1.8rem;
+  color: #3e2d1c;
+  line-height: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+#concept .about ul li {
+  margin-bottom: 1rem;
+}
+
+#concept img {
+  width: 50%;
+  /* 親要素の幅に合わせる */
+  max-width: 500px;
+  /* 最大幅を500pxに制限 */
+  height: auto;
+  /* 縦横比を維持して高さ自動調整 */
+  border-radius: 10px;
+  /* 角を丸くする */
+  object-fit: cover;
+  /* 必要に応じて画像のトリミング調整 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* 影で立体感 */
+  margin-left: 4rem;
+}
+
+#voice {
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 8rem;
+  background-color: #f6f0e8ee;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 3rem;
+  font-family: "Kosugi Maru", sans-serif;
+  color: #503C28;
+  border-radius: 10px;
+}
+
+#voice .about h2 {
+  display: flex; /* Flexboxを適用して子要素（テキストとアイコン）を横並びにする */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: center; /* h2の内容（テキストとアイコン）を水平方向の中央に配置 */
+  gap: 5px; /* テキストとアイコンの間隔を空ける。必要に応じて調整 */
+  /* 元々あった h2 のスタイルがあればそれも残す */
+  font-size: 6.4rem;
+  color: #503C28;
+  text-align: center; /* justify-content: center; で代替できる可能性もあるが、念のため残す */
+  margin-bottom: 1.8rem;
+}
+
+#voice .about h2::after {
+  content: ""; /* 擬似要素を使用 */
+  background-image: url('../images/Voice_Speaker.jpg'); /* アイコン画像のURL */
+  background-size: contain; /* 画像を要素内に収める */
+  background-repeat: no-repeat; /* 画像の繰り返しをしない */
+  background-position: center; /* アイコンが中央に表示されるように */
+  width: 80px; /* アイコンの幅。適宜調整してください */
+  height: 80px; /* アイコンの高さ。適宜調整してください */
+}
+
+
+#voice h2 {
+  margin-bottom: 0.5rem;
+}
+
+#voice h3 {
+  font-size: 3.6rem;
+  margin-bottom: 1rem;
+}
+
+#concept hr {
+  border-top: 2px solid #503C28;
+  width: 320px;
+  margin: 1rem auto 2.6rem;
+}
+
+
+#voice hr {
+  border-top: 2px solid #503C28;
+  width: 220px;
+  margin: 1rem auto 4rem;
+}
+
+.inhr {
+  border-top: 2px solid #503C28;
+  width: 250px;
+  margin: 1rem auto;
+}
+
+.hrhr {
+  border-top: 2px solid white;
+  width: 250px;
+  margin: 1rem auto;
+}
+
+
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.testimonial {
+  background: white;
+  padding: 1.8rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(80, 60, 40, 0.1);
+}
+
+.testimonial h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #945a03;
+}
+
+.testimonial h4 span {
+  font-weight: normal;
+  font-size: 1.6rem;
+  color: #777;
+  margin-left: 0.8rem;
+}
+
+.testimonial p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.voice-image {
+  width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 500px;
+  /* 高さ制限を追加 */
+  height: auto;
+  margin-right: 3rem;
+}
+
+
+#schedule {
+  background-color: #21170b;
+  padding: 10rem 6.8rem;
+  color: lightgray;
+}
+
+#schedule h2 {
+  display: flex; /* Flexboxを適用して子要素（テキストとアイコン）を横並びにする */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: center; /* h2の内容（テキストとアイコン）を水平方向の中央に配置 */
+  gap: 5px; /* テキストとアイコンの間隔を空ける。必要に応じて調整 */
+  /* 元々あった h2 のスタイルがあればそれも残す */
+  font-size: 6.4rem;
+  text-align: center; /* justify-content: center; で代替できる可能性もあるが、念のため残す */
+  margin-bottom: 1.8rem;
+  color:lightgray;
+}
+
+#schedule h2::after {
+  content: ""; /* 擬似要素を使用 */
+  background-image: url('../images/melody_schedule.jpg'); /* アイコン画像のURL */
+  background-size: contain; /* 画像を要素内に収める */
+  background-repeat: no-repeat; /* 画像の繰り返しをしない */
+  background-position: center; /* アイコンが中央に表示されるように */
+  width: 80px; /* アイコンの幅。適宜調整してください */
+  height: 80px; /* アイコンの高さ。適宜調整してください */
+  animation: tilt-shake 2s infinite ease-in-out;
+}
+
+#schedule h3 {
+  color:lightgray;
+}
+
+.menu-inner {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 0;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.menu-inner .item {
+  width: 30%;
+}
+
+.item-title {
+  font-size: 3.2rem;
+  margin-top: 1rem;
+}
+
+.menu-inner .item img {
+  width: 100%;
+  /* 親要素（item）の幅いっぱいに拡大 */
+  height: 250px;
+  /* 高さを固定 */
+  object-fit: cover;
+  /* 画像の縦横比を維持しつつ、枠いっぱいに表示（切り抜き） */
+  border-radius: 10px;
+  /* 角丸（お好みで） */
+  display: block;
+}
+
+.detail {
+  font-size: 2.2rem;
+}
+
+.message {
+  text-align: center;
+  font-size: 3.4rem;
+  margin-top: 6rem;
+}
+
+#faq {
+  background-color: #f6f0e8ee;
+  padding: 8rem;
+  margin-bottom: 280px;
+}
+
+.faq-container {
+  background-color: #f4efef;
+  padding: 4rem 0;
+  border-radius: 20px;
+}
+
+
+#faq ::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/CorkBoard02.jpg) no-repeat center/cover;
+  z-index: -1;
+}
+
+.faq-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-inner dl {
+  font-size: 2rem;
+  line-height: 1.8;
+}
+
+.faq-inner dt {
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #503C28;
+}
+
+.faq-inner dd {
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#contact {
+  padding: 8rem 2rem;
+  background-color: #f4efef;
+}
+
+.contact-inner {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1000px;
+  margin: 8rem auto;
+  gap: 2rem;
+}
+
+.contact-inner dl {
+  margin: 0;
+}
+
+.contact-inner dt {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-inner dd {
+  margin-bottom: 2.4rem;
+}
+
+.contact-inner input[type="text"],
+.contact-inner select,
+.contact-inner textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 300px;
+  margin: 2rem auto;
+  background: #800000;
+  color: white;
+  text-align: center;
+  font-size: 2.4rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.4rem;
+}
+
+
+@media (max-width: 768px) {
+
+  .menu-inner .item,
+  .about,
+  #concept img,
+  #voice img {
+    width: 100%;
+    padding: 0;
+  }
+}
